@@ -1,5 +1,4 @@
 const Joi = require("joi");
-const INITIAL_CLIENT_COUNT = 8000;
 
 const HEADER_DEFINITION = [
   { name: "id", p: 0, type: "id" },
@@ -17,6 +16,5 @@ const HEADER_DEFINITION = [
 ];
 
 module.exports = {
-  INITIAL_CLIENT_COUNT,
   HEADER_DEFINITION,
 };

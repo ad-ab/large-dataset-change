@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "fastify": "^4.3.0",
+    "@fastify/websocket": "^6.0.1",
     "joi": "^17.6.0",
     "jsum": "^2.0.0-alpha.4",
     "random-seed": "^0.3.0"

@@ -1,6 +1,6 @@
-const { APP_RANDOM_SEED } = process.env;
+const { SEED } = require("./config");
 
-const rand = require("random-seed").create(APP_RANDOM_SEED);
+const rand = require("random-seed").create(SEED);
+console.log("Rand seed used:", SEED);
 
-console.log("Rand seed used:", APP_RANDOM_SEED);
 module.exports.rand = rand;

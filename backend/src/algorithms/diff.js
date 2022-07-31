@@ -1,5 +1,4 @@
 const HEADER_DEFINITION = require("../constants").HEADER_DEFINITION;
-const JSum = require("jsum");
 
 const columnNames = HEADER_DEFINITION.map((x) => x.name);
 
