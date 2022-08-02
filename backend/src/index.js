@@ -1,7 +1,7 @@
 const { generateNewItem, regenerateItem } = require("./generators");
 const diff = require("./algorithms/diff");
 const config = require("./config");
-const { start } = require("./server");
+const start = require("./server");
 
 // let data = [];
 // let previousData = [];
@@ -21,5 +21,4 @@ const { start } = require("./server");
 // console.log(i, "----------", data.length, previousData.length);
 
 // console.timeEnd();
-
 start(config);
