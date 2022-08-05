@@ -1,7 +1,8 @@
 module.exports = createRoutes;
 
 function createRoutes(fastify) {
-  const { emitter, messageListener } = fastify;
+  const { emitter } = fastify;
+  let messageListener;
 
   // Connecting to room
   // ws://127.0.0.1:3001/event { "meta":"join", "room": "room1", "participant": "you", "payload": "Hi" }
@@ -50,7 +51,7 @@ function createRoutes(fastify) {
             emitter.emit({
               topic: "room-event",
               meta: "send-message",
-              room,
+              room: "room1",
               broadCast: true,
               payload,
             });
