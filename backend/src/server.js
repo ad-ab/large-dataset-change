@@ -1,6 +1,7 @@
 const fastify = require("fastify")({ logger: true });
 const fastifyws = require("@fastify/websocket");
 const fastifycompress = require("@fastify/compress");
+const fastifycors = require("@fastify/cors");
 
 const setupWsRoutes = require("./fastify/ws");
 const setupHttpRoutes = require("./fastify/http");
@@ -13,8 +14,9 @@ module.exports = setupFastify;
 
 async function setupFastify(config) {
   // get stuff we need into the fastify object
+  await fastify.register(fastifycors, { origin: "*" });
   await fastify.register(fastifyws);
-  await fastify.register(import("@fastify/compress"), {
+  await fastify.register(fastifycompress, {
     global: true,
     threshold: 2048,
   });

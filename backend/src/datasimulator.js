@@ -9,6 +9,7 @@ class DataSimulator {
   difference = [];
   checksum = null;
   interval = null;
+  deleteQueue = [];
   counter = 0;
   tickEvent = () => {};
 
@@ -21,6 +22,9 @@ class DataSimulator {
 
   generate() {
     this.previousData = [...this.data];
+    this.data = this.data.filter((x) => !this.deleteQueue.includes(x.id));
+
+    this.deleteQueue = [];
     this.data = this.data.map(regenerateItem);
     const checksum = JSum.digest(this.data, "MD5", "hex");
     this.difference = diff(this.previousData, this.data);
@@ -31,6 +35,10 @@ class DataSimulator {
       checksum,
       counter: this.counter,
     };
+  }
+
+  remove(id) {
+    this.deleteQueue.push(Number(id));
   }
 
   get() {
@@ -45,7 +53,7 @@ class DataSimulator {
     this.tickEvent = event;
   }
 
-  start = (time = 1000) => {
+  start = (time = 2000) => {
     this.tickEvent(this.generate());
 
     console.log(this.counter);

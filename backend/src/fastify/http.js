@@ -6,6 +6,7 @@ module.exports = (fastify) => {
   fastify.get("/diff", getDiff);
 
   fastify.post("/test-message", postTestMessage);
+  fastify.post("/delete/:id", deleteById);
 
   function get(request, reply) {
     return { hello: "world" };
@@ -27,6 +28,17 @@ module.exports = (fastify) => {
 
     reply.type("application/json").code(200);
     return { difference, counter };
+  }
+
+  function deleteById(request, reply) {
+    const { id } = request.params;
+
+    // validate ... no time
+    const { simulation } = fastify;
+    simulation.remove(id);
+
+    reply.code(200);
+    return null;
   }
 
   function postTestMessage(request, reply) {
