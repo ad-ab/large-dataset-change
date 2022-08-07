@@ -54,12 +54,12 @@ class DataSimulator {
   }
 
   start = (time = 2000) => {
+    console.log("counter: ", this.counter);
     this.tickEvent(this.generate());
 
-    console.log(this.counter);
     this.interval = setInterval(() => {
       this.counter++;
-      console.log(this.counter);
+      console.log("counter: ", this.counter);
       this.tickEvent(this.generate());
     }, time);
   };

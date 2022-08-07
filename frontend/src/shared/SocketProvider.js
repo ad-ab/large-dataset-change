@@ -68,7 +68,6 @@ export const SocketProvider = (props) => {
       const newData = addDiffToData(data, difference);
       const crc = JSum.digest(newData, "MD5", "hex");
       if (checksum !== crc) {
-        console.log(process.env.REACT_APP_HTTP_URL);
         setIsDownloading(true);
         const { data } = await axios.get(
           `${process.env.REACT_APP_HTTP_URL}/all`
@@ -100,7 +99,7 @@ export const SocketProvider = (props) => {
   };
 
   const connect = () => {
-    console.log("Connecting");
+    console.log("connecting ws...");
     socket.send(
       JSON.stringify({
         meta: "join",

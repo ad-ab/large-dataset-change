@@ -47,7 +47,7 @@ async function setupFastify(config) {
 
   // start the server
   try {
-    await fastify.listen({ port: config.PORT });
+    await fastify.listen({ port: config.PORT, host: "0.0.0.0" });
     fastify.simulation.start();
   } catch (err) {
     fastify.log.error(err);
