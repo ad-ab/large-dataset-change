@@ -18,6 +18,8 @@ You can start the server by running
 npm run start
 ```
 
+Now you can run the frontend (multiple times) and see your data being changed
+
 ## Env Variables
 
 |Variable|ExampleValue|Description| 

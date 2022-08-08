@@ -16,6 +16,12 @@ npm i
 npm run start
 ```
 
+And open the website on 
+
+```
+http://localhost:3000
+```
+
 ## Env Variables
 
 |Variable|ExampleValue|Description| 

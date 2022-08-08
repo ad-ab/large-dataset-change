@@ -26,6 +26,9 @@ I tried to implement these points:
   - Tests (frontend - Cypress, backend - ava/jest)
   - Proper state management (frontend) 
   - Better project organisation (both)
+  - Typescript
+  - Entry point validation (validating data on all api endpoints using Joi)
+  - Caching 
 ## Data Structure
 
 ### Main Data Structure
